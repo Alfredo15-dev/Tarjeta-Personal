@@ -1,8 +1,29 @@
+:root {
+  --bg-color: #0f172a;
+  --text-color: #ffffff;
+  --subtext-color: rgba(255, 255, 255, 0.7);
+  --bio-color: rgba(255, 255, 255, 0.8);
+  --link-bg: rgba(148, 163, 184, 0.1);
+  --link-color: #e2e8f0;
+}
+
+/* Tema claro */
+.card.light {
+  --bg-color: #ffffff;
+  --text-color: #0f172a;
+  --subtext-color: rgba(15, 23, 42, 0.8);
+  --bio-color: rgba(15, 23, 42, 0.8);
+  --link-bg: rgba(15, 23, 42, 0.06);
+  --link-color: #0f172a;
+  --avatar-border: rgba(2, 3, 5, 0.712);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 }
 
 body {
@@ -22,6 +43,7 @@ body {
   text-align: center;
   color: #fff;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+  transition: 0.25s ease;
 }
 
 .avatar {
@@ -30,8 +52,10 @@ body {
   border-radius: 9999px;
   object-fit: cover;
   margin-bottom: 1.2rem;
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  border: 3px solid var(--avatar-border);
+  transition: border-color 0.25s ease;
 }
+
 
 h1 {
   font-size: 1.6rem;
@@ -50,6 +74,40 @@ h1 {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.extra {
+  margin-bottom: 1rem;
+  display: none; /* oculta por defecto */
+  text-align: left;
+  gap: 0.3rem;
+}
+
+.extra p {
+  margin-bottom: 0.3rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #e2e8f0;
+  color: #0f172a;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
 .links {
   display: flex;
   gap: 0.7rem;
@@ -58,7 +116,7 @@ h1 {
 }
 
 .links a {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(148, 163, 184, 0.1);
   color: #e2e8f0;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -71,4 +129,38 @@ h1 {
 .links a:hover {
   background: #e2e8f0;
   color: #0f172a;
+}
+
+/* Tema claro que activamos con JS */
+.card.light {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.card.light .links a {
+  background: rgba(15, 23, 42, 0.06);
+  color: #0f172a;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+.card {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.role {
+  color: var(--subtext-color);
+}
+
+.bio {
+  color: var(--bio-color);
+}
+
+.links a {
+  background: var(--link-bg);
+  color: var(--link-color);
 }

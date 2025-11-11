@@ -7,20 +7,36 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="card">
+    <main class="card" id="profile-card">
       <img
-        src="https://via.placeholder.com/120" alt="Foto de perfil" class="avatar"/>
-      <h1>Tu nombre aquí</h1>
+        src="img/perfil.jpeg" alt="Foto de perfil" class="avatar"
+      />
+      <h1 id="name">Alfredo Alvarracin</h1>
       <p class="role">Desarrolladora web en formación</p>
       <p class="bio">
         Me gusta aprender, crear proyectos y estoy retomando programación para
-        armar mi portafolio 💻
+        armar mi portafolio
       </p>
+
+      <!-- Sección que mostramos/ocultamos con JS -->
+      <div class="role" id="extra-info">
+        <p> 📍 Barcelona, España</p>
+        <p> 💼 Buscando prácticas / proyectos</p>
+        <p> 🛠 HTML · CSS · JavaScript</p>
+      </div>
+
+      <div class="buttons">
+        <button id="toggle-info">Ver más</button>
+        <button id="toggle-theme">Cambiar tema</button>
+      </div>
+
       <div class="links">
         <a href="https://github.com/Alfredo15-dev" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        <a href="mailto:tuemail@example.com">Contacto</a>
+        <a href="https://www.linkedin.com/in/alvarracinalfredo/" target="_blank">LinkedIn</a>
+        <a href="mailto:alvarracinalfredo.15.com">Contacto</a>
       </div>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
